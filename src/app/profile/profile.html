@@ -1,0 +1,76 @@
+<header>
+  <!-- <img src="logo.png" alt="KLand Logo" width="80"> -->
+  <h1>MY ACCOUNT</h1>
+  <p>Manage Your Fun: View Tickets, Book Zones, and Track Your Adventure!</p>
+</header>
+<!-- test -->
+<div class="account-container">
+  <div class="user-summary">
+    <i class="fas fa-user-circle"></i>
+    <div>
+      <h3>{{this.FIRSTNAME}} {{this.LASTNAME}}</h3>
+      <p>+965 {{this.PHONENO}}</p>
+      <p>{{this.EMAIL}}</p>
+    </div>
+  </div>
+
+  <div class="sidebar-form-wrapper">
+    <div class="sidebar">
+      <ul>
+        <li><i class="fas fa-edit"></i> Edit Profile</li>
+        <li><i class="fas fa-question-circle"></i> FAQS</li>
+        <li><i class="fas fa-envelope"></i> Contact Us</li>
+        <li><i class="fas fa-user-slash"></i> Delete Account</li>
+        <li class="logout" (click)="LOGOUT()"><i class="fas fa-sign-out-alt"></i> Logout</li>
+      </ul>
+    </div>
+
+    <div class="form-section">
+      <h2>Personal Information</h2>
+      <div class="form-fields">
+        <div>
+          <label>First Name</label>
+          <input type="text" [(ngModel)]="FIRSTNAME" placeholder="Enter a first name">
+        </div>
+        <div>
+          <label>Last Name</label>
+          <input type="text" [(ngModel)]="LASTNAME" placeholder="Enter a last name">
+        </div>
+        <div>
+          <label>Email Address</label>
+          <input type="email" [(ngModel)]="EMAIL" placeholder="Enter a email">
+        </div>
+        <div>
+          <label>Phone Number</label>
+          <input type="text" [(ngModel)]="PHONENO" placeholder="Phone number">
+        </div>
+        <div>
+          <label>Old Password</label>
+          <input type="password" [(ngModel)]="OLDPASSWORD" placeholder="Enter your current password">
+        </div>
+        <div>
+          <label>New Password</label>
+          <input type="password" [(ngModel)]="NEWPASSWORD" placeholder="Enter your new password">
+        </div>
+        <div class="full-width">
+          <label>Confirm New Password</label>
+          <input type="password" [(ngModel)]="CONFIRMPASSWORD" placeholder="Confirm your new password">
+        </div>
+      </div>
+      <button class="save-button">Save</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Quick links</p>
+  <div>
+    <a href="#">Press</a>
+    <a href="#">FAQs</a>
+    <a href="#">Contact us</a>
+    <a href="#">About us</a>
+    <a href="#">Join the team</a>
+    <a href="#">Terms & Conditions</a>
+  </div>
+  <p style="margin-top: 1rem;">&copy; 2024 K-Land. All Rights Reserved.</p>
+</footer>

@@ -1,0 +1,58 @@
+<div class="login-container">
+  <div class="login-card">
+    <!-- <img src="/../../../../ADITYA/USER_LOGIN/PROFILE/src/asstes/Images/ICON.png" alt="Kland Logo" class="logo" /> -->
+    <h2>ENTER YOUR EMAIL TO CONTINUE</h2>
+<div class="login-form">
+  <form #loginForm="ngForm" (ngSubmit)="LOGIN()">
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="EMAIL"
+      placeholder="Email"
+      #email="ngModel"
+      required
+      email
+    />
+    <div *ngIf="email.invalid && email.touched" class="error-message">
+      <small *ngIf="email.errors?.['required']">Email is required.</small>
+      <small *ngIf="email.errors?.['email']">Enter a valid email.</small>
+    </div>
+
+    <div class="password-wrapper mt-2">
+      <input
+       [type]="showPassword ? 'text' : 'password'"
+        name="password"
+        [(ngModel)]="PASSWORD"
+        placeholder="Password"
+        #password="ngModel"
+        required
+      />
+    <button
+    type="button"
+    class="toggle-visibility"
+    (click)="togglePasswordVisibility()"
+  >
+    <i [class]="showPassword ? 'fas fa-eye' : 'fas fa-eye-slash'"></i>
+  </button>
+    </div>
+    <div *ngIf="password.invalid && password.touched" class="error-message">
+      <small>Password is required.</small>
+    </div>
+    <div class="forgot-link ">
+      <a href="#"><b>Forgot password?</b></a>
+    </div>
+
+    <button type="submit" class="login-button" [disabled]="loginForm.invalid" (click)="LOGIN()">
+      Login
+    </button>
+  </form>
+</div>
+
+
+    <p class="create-account">
+      Don't have an account?
+      <a href="#">Create Account</a>
+    </p>
+  </div>
+</div>
+
